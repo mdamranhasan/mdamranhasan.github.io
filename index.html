@@ -9,6 +9,7 @@
 
     <title>Amran Portfolio</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -57,7 +58,7 @@
             <div class="nav-right">
 
                 <!-- Theme Button -->
-                <button class="theme-btn">
+                <button class="theme-btn" type="button">
                     🌙
                 </button>
 
@@ -71,7 +72,6 @@
         </nav>
 
     </header>
-
 
 
     <!-- =========================
@@ -102,7 +102,7 @@
                 <!-- Buttons -->
                 <div class="hero-buttons">
 
-                    <a href="#" class="btn primary-btn">
+                    <a href="#contact" class="btn primary-btn">
                         Hire Me
                     </a>
 
@@ -130,14 +130,16 @@
             <!-- Right Image -->
             <div class="hero-image">
 
-                <img src="image/portfolio.jpeg" alt="Profile Image">
+                <img
+                    src="image/portfolio.jpeg"
+                    alt="Md. Amran Hasan Profile Image"
+                >
 
             </div>
 
         </div>
 
     </section>
-
 
 
     <!-- =========================
@@ -151,7 +153,10 @@
             <!-- Left Image -->
             <div class="about-image">
 
-                <img src="image/portfolio.jpeg" alt="About Image">
+                <img
+                    src="image/portfolio.jpeg"
+                    alt="About Md. Amran Hasan"
+                >
 
             </div>
 
@@ -210,7 +215,6 @@
     </section>
 
 
-
     <!-- =========================
             SKILLS SECTION
     ========================= -->
@@ -233,10 +237,11 @@
 
         </div>
 
+
         <!-- Skills Container -->
         <div class="skills-container">
 
-            <!-- Card -->
+            <!-- HTML -->
             <div class="skill-card">
 
                 <div class="skill-icon">🌐</div>
@@ -259,7 +264,8 @@
 
             </div>
 
-            <!-- Card -->
+
+            <!-- CSS -->
             <div class="skill-card">
 
                 <div class="skill-icon">🎨</div>
@@ -282,7 +288,8 @@
 
             </div>
 
-            <!-- Card -->
+
+            <!-- JavaScript -->
             <div class="skill-card">
 
                 <div class="skill-icon">⚡</div>
@@ -305,7 +312,8 @@
 
             </div>
 
-            <!-- Card -->
+
+            <!-- React -->
             <div class="skill-card">
 
                 <div class="skill-icon">🚀</div>
@@ -333,174 +341,326 @@
     </section>
 
 
-    <section class="education">
+    <!-- =========================
+            EDUCATION SECTION
+    ========================= -->
 
-    <div class="section-heading">
-        <span>Education</span>
-        <h2>My Academic Journey</h2>
-    </div>
+    <section class="education" id="education">
 
-    <div class="education-grid">
+        <div class="section-heading">
 
-        <div class="edu-card">
-            <div class="edu-icon">🎓</div>
-            <span class="year">2022 - Present</span>
-            <h3>BSc in Computer Science</h3>
-            <h4>National University</h4>
-            <p>Studying web development, programming, databases and software engineering.</p>
-        </div>
+            <span>Education</span>
 
-        <div class="edu-card">
-            <div class="edu-icon">📚</div>
-            <span class="year">2020 - 2022</span>
-            <h3>Higher Secondary Certificate</h3>
-            <h4>Science Group</h4>
-            <p>Completed higher secondary education with a focus on technology and science.</p>
-        </div>
-
-        <div class="edu-card">
-            <div class="edu-icon">💻</div>
-            <span class="year">2023</span>
-            <h3>Frontend Development Course</h3>
-            <h4>Professional IT Institute</h4>
-            <p>Completed professional training in HTML, CSS, JavaScript and Bootstrap.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="contact">
-
-    <div class="contact-title">
-        <span>Contact</span>
-        <h2>Let's Work Together</h2>
-        <p>Have a project in mind? Feel free to contact me.</p>
-    </div>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <div class="info-card">
-                <h3>Email</h3>
-                <p>amran@example.com</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Phone</h3>
-                <p>+880 1234 567890</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Location</h3>
-                <p>Dhaka, Bangladesh</p>
-            </div>
-
-        </div>
-
-     <section class="contact" id="contact">
-
-    <div class="contact-title">
-        <span>Contact</span>
-        <h2>Let's Work Together</h2>
-        <p>Have a project in mind? Feel free to contact me.</p>
-    </div>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <div class="info-card">
-                <h3>Email</h3>
-                <p>elelamranhasan@gmail.com</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Phone</h3>
-                <p>+880 1234 567890</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Location</h3>
-                <p>Dhaka, Bangladesh</p>
-            </div>
+            <h2>My Academic Journey</h2>
 
         </div>
 
 
-        <!-- Contact Form -->
-        <form class="contact-form" id="contact-form">
+        <div class="education-grid">
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
+            <!-- Education 1 -->
+            <div class="edu-card">
+
+                <div class="edu-icon">🎓</div>
+
+                <span class="year">
+                    2022 - Present
+                </span>
+
+                <h3>
+                    BSc in Computer Science
+                </h3>
+
+                <h4>
+                    National University
+                </h4>
+
+                <p>
+                    Studying web development, programming,
+                    databases and software engineering.
+                </p>
+
+            </div>
+
+
+            <!-- Education 2 -->
+            <div class="edu-card">
+
+                <div class="edu-icon">📚</div>
+
+                <span class="year">
+                    2020 - 2022
+                </span>
+
+                <h3>
+                    Higher Secondary Certificate
+                </h3>
+
+                <h4>
+                    Science Group
+                </h4>
+
+                <p>
+                    Completed higher secondary education
+                    with a focus on technology and science.
+                </p>
+
+            </div>
+
+
+            <!-- Education 3 -->
+            <div class="edu-card">
+
+                <div class="edu-icon">💻</div>
+
+                <span class="year">
+                    2023
+                </span>
+
+                <h3>
+                    Frontend Development Course
+                </h3>
+
+                <h4>
+                    Professional IT Institute
+                </h4>
+
+                <p>
+                    Completed professional training in HTML,
+                    CSS, JavaScript and Bootstrap.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+            PROJECTS SECTION
+    ========================= -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-heading">
+
+            <span>Projects</span>
+
+            <h2>My Recent Work</h2>
+
+        </div>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    Modern responsive personal portfolio website
+                    using HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#" class="btn primary-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>E-Commerce Website</h3>
+
+                <p>
+                    Responsive online shopping website with
+                    modern product cards and user interface.
+                </p>
+
+                <a href="#" class="btn primary-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Business Website</h3>
+
+                <p>
+                    Professional business website designed
+                    for modern brands and companies.
+                </p>
+
+                <a href="#" class="btn primary-btn">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+            CONTACT SECTION
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-title">
+
+            <span>Contact</span>
+
+            <h2>Let's Work Together</h2>
+
+            <p>
+                Have a project in mind? Feel free to contact me.
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <div class="info-card">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        elelamranhasan@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>Phone</h3>
+
+                    <p>
+                        +880 1234 567890
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>Location</h3>
+
+                    <p>
+                        Dhaka, Bangladesh
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <form
+                class="contact-form"
+                id="contact-form"
             >
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
 
-            <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-            >
 
-            <textarea
-                name="message"
-                rows="6"
-                placeholder="Your Message"
-                required
-            ></textarea>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                >
 
-            <button type="submit">
-                Send Message
-            </button>
 
-        </form>
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                >
 
-    </div>
 
-</section>
+                <textarea
+                    name="message"
+                    rows="6"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
 
-    </div>
 
-</section>
-<footer class="footer">
+                <button type="submit">
+                    Send Message
+                </button>
 
-    <div class="footer-content">
+            </form>
 
-        <h2>Amran Portfolio</h2>
-
-        <p class="footer-text">
-            Frontend Web Developer & Trainer
-        </p>
-
-        <div class="datetime-box">
-            <h3>Current Date & Time</h3>
-
-            <p id="date"></p>
-
-            <p id="time"></p>
         </div>
 
-    </div>
+    </section>
 
-  
-</footer>
 
+    <!-- =========================
+            FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h2>
+                Amran Portfolio
+            </h2>
+
+            <p class="footer-text">
+                Frontend Web Developer & Trainer
+            </p>
+
+
+            <!-- Date & Time -->
+            <div class="datetime-box">
+
+                <h3>
+                    Current Date & Time
+                </h3>
+
+                <p id="date"></p>
+
+                <p id="time"></p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+            EMAILJS
+    ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+    <!-- =========================
+            CUSTOM JAVASCRIPT
+    ========================= -->
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-

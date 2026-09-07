@@ -3,10 +3,9 @@
 // =========================
 
 const menuToggle = document.querySelector(".menu-toggle");
-
 const navLinks = document.querySelector(".nav-links");
 
-if(menuToggle){
+if (menuToggle && navLinks) {
 
     menuToggle.addEventListener("click", () => {
 
@@ -17,37 +16,37 @@ if(menuToggle){
 }
 
 
-
 // =========================
 // DARK MODE
 // =========================
 
 const themeBtn = document.querySelector(".theme-btn");
 
-themeBtn.addEventListener("click", () => {
+if (themeBtn) {
 
-    document.body.classList.toggle("light-mode");
+    themeBtn.addEventListener("click", () => {
 
-    if(document.body.classList.contains("light-mode")){
+        document.body.classList.toggle("light-mode");
 
-        document.body.style.background = "#ffffff";
+        if (document.body.classList.contains("light-mode")) {
 
-        document.body.style.color = "#000000";
+            document.body.style.background = "#ffffff";
+            document.body.style.color = "#000000";
 
-        themeBtn.innerHTML = "☀️";
+            themeBtn.innerHTML = "☀️";
 
-    }else{
+        } else {
 
-        document.body.style.background = "#0f172a";
+            document.body.style.background = "#0f172a";
+            document.body.style.color = "#ffffff";
 
-        document.body.style.color = "#ffffff";
+            themeBtn.innerHTML = "🌙";
 
-        themeBtn.innerHTML = "🌙";
+        }
 
-    }
+    });
 
-});
-
+}
 
 
 // =========================
@@ -64,42 +63,42 @@ const words = [
 ];
 
 let wordIndex = 0;
-
 let charIndex = 0;
-
 let isDeleting = false;
 
-function typeEffect(){
+function typeEffect() {
+
+    if (!typingText) return;
 
     const currentWord = words[wordIndex];
 
-    if(isDeleting){
+    if (isDeleting) {
 
         typingText.textContent =
-        currentWord.substring(0, charIndex--);
+            currentWord.substring(0, charIndex--);
 
-    }else{
+    } else {
 
         typingText.textContent =
-        currentWord.substring(0, charIndex++);
+            currentWord.substring(0, charIndex++);
 
     }
 
     let typingSpeed = isDeleting ? 80 : 120;
 
-    if(!isDeleting && charIndex === currentWord.length){
+    if (!isDeleting && charIndex === currentWord.length) {
 
         isDeleting = true;
-
         typingSpeed = 1500;
 
     }
 
-    else if(isDeleting && charIndex === 0){
+    else if (isDeleting && charIndex === 0) {
 
         isDeleting = false;
 
-        wordIndex = (wordIndex + 1) % words.length;
+        wordIndex =
+            (wordIndex + 1) % words.length;
 
     }
 
@@ -110,149 +109,198 @@ function typeEffect(){
 typeEffect();
 
 
-
 // =========================
 // SKILLS BAR ANIMATION
 // =========================
 
 const skillsSection = document.querySelector(".skills");
-
 const skillBars = document.querySelectorAll(".skill-bar");
 
-window.addEventListener("scroll", () => {
+if (skillsSection) {
 
-    const sectionTop = skillsSection.offsetTop - 400;
+    window.addEventListener("scroll", () => {
 
-    if(window.scrollY >= sectionTop){
+        const sectionTop =
+            skillsSection.offsetTop - 400;
 
-        skillBars.forEach(bar => {
+        if (window.scrollY >= sectionTop) {
 
-            const width =
+            skillBars.forEach(bar => {
 
-            bar.classList.contains("html") ? "95%" :
+                const width =
+                    bar.classList.contains("html") ? "95%" :
+                    bar.classList.contains("css") ? "90%" :
+                    bar.classList.contains("js") ? "85%" :
+                    "80%";
 
-            bar.classList.contains("css") ? "90%" :
+                bar.style.width = width;
 
-            bar.classList.contains("js") ? "85%" :
+            });
 
-            "80%";
+        }
 
-            bar.style.width = width;
+    });
 
-        });
+}
 
-    }
 
-});
-
+// =========================
+// EDUCATION CARD ANIMATION
+// =========================
 
 const eduCards = document.querySelectorAll(".edu-card");
 
 eduCards.forEach(card => {
 
+    const icon = card.querySelector(".edu-icon");
+
     card.addEventListener("mouseenter", () => {
-        card.querySelector(".edu-icon").style.transform = "scale(1.15) rotate(10deg)";
+
+        if (icon) {
+            icon.style.transform =
+                "scale(1.15) rotate(10deg)";
+        }
+
     });
 
     card.addEventListener("mouseleave", () => {
-        card.querySelector(".edu-icon").style.transform = "scale(1) rotate(0)";
+
+        if (icon) {
+            icon.style.transform =
+                "scale(1) rotate(0deg)";
+        }
+
     });
 
 });
 
 
-const contactForm = document.querySelector(".contact-form");
-
-contactForm.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    const button = this.querySelector("button");
-
-    button.innerText = "Message Sent ✓";
-
-    setTimeout(() => {
-        button.innerText = "Send Message";
-        this.reset();
-    }, 2000);
-
-});
+// =========================
+// DATE & TIME
+// =========================
 
 const date = document.getElementById("date");
 const time = document.getElementById("time");
 
-function updateClock(){
+function updateClock() {
 
     const now = new Date();
 
-    date.innerHTML = now.toLocaleDateString("en-US",{
-        weekday:"long",
-        day:"numeric",
-        month:"long",
-        year:"numeric"
-    });
+    if (date) {
 
-    time.innerHTML = now.toLocaleTimeString();
+        date.textContent =
+            now.toLocaleDateString("en-US", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+
+    }
+
+    if (time) {
+
+        time.textContent =
+            now.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            });
+
+    }
+
 }
 
 updateClock();
 
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
 
-const dateEl = document.getElementById("current-date");
-const timeEl = document.getElementById("current-time");
 
-function updateDateTime() {
+// =========================
+// EMAILJS
+// =========================
 
-    const now = new Date();
-
-    const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-    };
-
-    dateEl.textContent = now.toLocaleDateString("en-US", options);
-
-    timeEl.textContent = now.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    });
-}
-
-// Initialize EmailJS
 emailjs.init({
     publicKey: "RYEZoq6_2PcthlQRE"
 });
 
 
-// Contact Form
-const contactForm = document.getElementById("contact-form");
+// =========================
+// CONTACT FORM
+// =========================
 
-contactForm.addEventListener("submit", function (event) {
+const contactForm =
+    document.getElementById("contact-form");
 
-    event.preventDefault();
+if (contactForm) {
 
-    emailjs.sendForm(
-        "service_19fgcoo",
-        "template_qhfvtun",
-        this
-    )
-    .then(function () {
+    contactForm.addEventListener("submit", function (event) {
 
-        alert("Message sent successfully!");
+        event.preventDefault();
 
-        contactForm.reset();
+        const button =
+            contactForm.querySelector("button");
 
-    })
-    .catch(function (error) {
+        // Button loading
+        if (button) {
+            button.innerText = "Sending...";
+            button.disabled = true;
+        }
 
-        console.log("Error:", error);
 
-        alert("Failed to send message. Please try again.");
+        // Send Email
+        emailjs.sendForm(
+            "service_19fgcoo",
+            "template_qhfvtun",
+            contactForm
+        )
+
+        .then(function () {
+
+            alert("আপনার সাথে শীঘ্রই যোগাযোগ করবেন আমরান হাসান। ধন্যবাদ! 😊 ✅");
+
+            contactForm.reset();
+
+            if (button) {
+
+                button.innerText =
+                    "Message Sent ✓";
+
+                setTimeout(() => {
+
+                    button.innerText =
+                        "Send Message";
+
+                    button.disabled = false;
+
+                }, 2000);
+
+            }
+
+        })
+
+        .catch(function (error) {
+
+            console.error(
+                "EmailJS Error:",
+                error
+            );
+
+            alert(
+                "Failed to send message. Please try again. ❌"
+            );
+
+            if (button) {
+
+                button.innerText =
+                    "Send Message";
+
+                button.disabled = false;
+
+            }
+
+        });
 
     });
 
-});
+}
