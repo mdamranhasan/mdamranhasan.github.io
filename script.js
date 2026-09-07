@@ -221,3 +221,38 @@ function updateDateTime() {
         second: "2-digit"
     });
 }
+
+// Initialize EmailJS
+emailjs.init({
+    publicKey: "RYEZoq6_2PcthlQRE"
+});
+
+
+// Contact Form
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    emailjs.sendForm(
+        "service_19fgcoo",
+        "template_qhfvtun",
+        this
+    )
+    .then(function () {
+
+        alert("Message sent successfully!");
+
+        contactForm.reset();
+
+    })
+    .catch(function (error) {
+
+        console.log("Error:", error);
+
+        alert("Failed to send message. Please try again.");
+
+    });
+
+});
